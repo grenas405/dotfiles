@@ -1,0 +1,78 @@
+ls
+git clone https://github.com/LukeSmithxyz/voidrice.git
+ls
+cp -r voidrice/.config .
+cp -r voidrice/.local/share/* .local/share
+ls
+ls -a
+ln -s .config/shell/profile .zprofile
+ln -s .config/zsh/.zshrc .
+ls
+ls -a
+nano .config/shell/aliasrc
+source .zshrc
+alias dotfiles
+cfa
+source .zprofile
+cp -r voidrice/.local/bin .local
+source .zprofile
+source .zshrc
+alias dotf
+ls
+alias dotfiles
+ls
+alias
+nano .config/shell/aliasrc
+source .zshrc
+alias dotfiles
+dotfiles config --local status.ShowUntrackedFiles no
+dotfiles tatus
+dotfiles status
+dotfiles
+dotfiles status
+alias dotfiles
+nano .config/shell/aliasrc
+source .zshrc
+dotfiles
+source .zprofile
+alias dotfiles
+git --git-dir=/home/admin/.local/share/dotfiles --work-tree=/home/admin
+git --git-dir=/home/admin/.local/share/dotfiles --work-tree=/home/admin
+git --git-dir=/home/admin/.local/share/dotfiles --work-tree=/home/admin config
+git --git-dir=/home/admin/.local/share/dotfiles --work-tree=/home/admin status
+dotfiles status
+dotfiles add .config .local
+git status
+git config status
+git config
+git config --global
+git config --global user.name
+git config --global user.name 
+git config --global user.name "grenas405"
+git config --global user.email "domingueztechsolutions@gmail.com"
+ssh-keygen -t ed25519 -C "domingueztechsolutions@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed255919
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+ls
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME clone git@github.com:grenas405/dotfiles 
+git clone --bare git@github.com:grenas405/dotfiles.git $HOME/.local/share/dotfiles
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME 
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME fetch
+ls -a
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME checkout
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME checkout
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME checkout
+git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME checkout -f
+ls
+ls -a
+source .zshrc
+ls
+source .zprofile
+ls
+cfa
+ls
+ls
+exit

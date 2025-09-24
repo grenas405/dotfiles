@@ -21,9 +21,57 @@ se() {
 
 # Verbosity and settings that you pretty much just always are going to want.
 
+# CSS extraction aliases for Unix shells
+# Extract all inline CSS from HTML file to CSS file
+alias extract-inline-css='grep -oP "style=\"[^\"]*\"" "$1" | \
+  sed "s/style=\"//g" | \
+  sed "s/\"$//g" | \
+  sed "s/;/;\n/g" | \
+  sort -u > "${1%.*}.css"'
+
+# More comprehensive extraction with element context
+alias html2css='perl -ne "print \$1.\"\n\" if /style=\"([^\"]+)\"/g" "$1" | \
+  sed "s/;/;\n/g" | \
+  sort -u > "${1%.*}.css"'
+
+# Extract and format inline styles with basic CSS structure
+alias inline2css='awk "/style=/{match(\$0,/style=\"[^\"]*\"/); \
+  print substr(\$0,RSTART+7,RLENGTH-8)}" "$1" | \
+  tr ";" "\n" | \
+  sed "/^$/d" | \
+  sort -u > "${1%.*}.css"'
+
+# Advanced extraction with element tag context (creates structured CSS)
+alias css-extract='sed -n "s/.*<\([^[:space:]>]*\)[^>]*style=\"\([^\"]*\)\".*/\1 { \2 }/p" \
+  "$1" | \
+  sed "s/;/ ;\n  /g" | \
+  sed "s/{/ {\n  /g" | \
+  sed "s/}/ \n}\n/g" > "${1%.*}.css"'
+
+# Simple one-liner for quick extraction
+alias getcss='grep -o "style=\"[^\"]*\"" "$1" | \
+  cut -d"\"" -f2 | \
+  tr ";" "\n" | \
+  sort -u > "${1%.*}.css"'
+
+# Extract with class/id context for better CSS organization
+alias extract-contextual='sed -n "s/.*\(class=\"[^\"]*\"\|id=\"[^\"]*\"\).*style=\"\([^\"]*\)\".*/\1: \2/p" \
+  "$1" | \
+  sed "s/;/;\n    /g" | \
+  sort -u > "${1%.*}.css"'
+
+# Clean extraction removing duplicate properties
+alias css-clean='grep -o "style=\"[^\"]*\"" "$1" | \
+  cut -d"\"" -f2 | \
+  sed "s/;/\n/g" | \
+  sed "s/^[[:space:]]*//" | \
+  sed "/^$/d" | \
+  sort -u > "${1%.*}.css"'
+
 alias \
   dotfiles="git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME" \
   go="cd ~/deno-genesis/ && git pull && git-automate"
+
 
 alias \
   cp="cp -iv" \

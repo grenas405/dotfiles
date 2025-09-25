@@ -69,9 +69,8 @@ alias css-clean='grep -o "style=\"[^\"]*\"" "$1" | \
   sort -u > "${1%.*}.css"'
 
 alias \
-  dotfiles="git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME" \
+  dotfiles="git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME" \
   go="cd ~/deno-genesis/ && git pull && git-automate"
-
 
 alias \
   cp="cp -iv" \
